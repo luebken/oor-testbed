@@ -1,12 +1,12 @@
 # TestBed for OOR
 
-This is a tiny repo to discuss options for Observe-Only Resources. 
+This is a tiny repo to discuss options for all things Observe-Only Resources. 
 
 Issues:
 * https://github.com/crossplane/crossplane/issues/1722
 * https://github.com/crossplane/crossplane/issues/2099
 
-## Using Paused annotation
+## Paused annotation
 
 By using the `paused` annotation (see [docs > concepts > managed-resources](https://crossplane.io/docs/v1.10/concepts/managed-resources.html#pausing-reconciliations)) we can pause the reconciliation of a specific MR. The idea here is to specify the 
 
@@ -79,3 +79,9 @@ This bucket is now not managed by Crossplane but you can now use it in composite
 
 Caveat: These resources updated. For true Observe-Only-Resources a user would want to have the external state synced into the resource.
 
+
+## Provider-terraform
+
+With [provider-terraform](https://github.com/crossplane-contrib/provider-terraform) Crossplane has way of calling Terraform code directly. We can use this to re-use Terraforms [data source](https://developer.hashicorp.com/terraform/language/data-sources).
+
+See https://github.com/crossplane-contrib/provider-terraform/tree/master/examples/observe-only-composition for a complete example. 
